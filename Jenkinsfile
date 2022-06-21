@@ -1,4 +1,9 @@
 pipeline {
+node('master', {
+  echo 'env.PATH=' + env.PATH
+  sh('env')
+ })
+
     agent {
         docker {
             image 'maven:3.8.1-adoptopenjdk-11'
